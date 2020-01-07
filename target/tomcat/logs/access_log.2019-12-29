@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [29/Dec/2019:19:59:01 +0530] "GET / HTTP/1.1" 200 155 http-bio-8080-exec-1 605
+0:0:0:0:0:0:0:1 - - [29/Dec/2019:19:59:01 +0530] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 7
+0:0:0:0:0:0:0:1 - - [29/Dec/2019:19:59:13 +0530] "GET /?name=sankhadeep HTTP/1.1" 200 165 http-bio-8080-exec-4 5
+0:0:0:0:0:0:0:1 - - [29/Dec/2019:19:59:34 +0530] "GET /?name=sankhadeep&password=pass1 HTTP/1.1" 200 170 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [29/Dec/2019:20:00:17 +0530] "GET /?name=sankhadeep&password=pass1 HTTP/1.1" 200 170 http-bio-8080-exec-8 1
