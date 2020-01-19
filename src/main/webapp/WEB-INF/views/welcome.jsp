@@ -10,6 +10,7 @@
 <body>
 <%-- My JSP page ${name} and password is ${password} --%> 
 <% %>
-Welcome ${name} ${password}
+Welcome ${name} 
+<p>${todos}</p>
 </body>
 </html>
