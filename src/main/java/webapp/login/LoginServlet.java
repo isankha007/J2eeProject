@@ -1,4 +1,5 @@
-package webapp;
+package webapp.login;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -8,6 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import webapp.TodoService;
+
 
 /*
  * Browser sends Http Request to Web Server
@@ -32,7 +36,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
-	public UserValidation UserValidationService= new UserValidation();
+	public LoginService UserValidationService= new LoginService();
 	public TodoService todoService= new TodoService();
 
 	@Override
@@ -57,12 +61,14 @@ public class LoginServlet extends HttpServlet {
 			throws IOException, ServletException {
 		String name = request.getParameter("name");
 		String password = request.getParameter("password");
-		if(UserValidationService.isValidUser(name, password))
+		boolean isUserValid=UserValidationService.isValidUser(name, password);
+		if(isUserValid)
 		{
-			request.setAttribute("name", name);
-			request.setAttribute("todos", todoService.retriveTodos());
-//			request.setAttribute("password", password);
-			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			response.sendRedirect("/todo.do");
+//			request.setAttribute("name", name);
+//			request.setAttribute("todos", todoService.retriveTodos());
+////			request.setAttribute("password", password);
+//			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 		}else {
 			request.setAttribute("errorMessage", "Invalid credentials");
 			request.getRequestDispatcher("/WEB-INF/views/login.jsp").forward(request, response);
