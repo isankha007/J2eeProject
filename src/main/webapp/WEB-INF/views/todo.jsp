@@ -11,12 +11,18 @@
 <body>
 <%-- My JSP page ${name} and password is ${password} --%> 
 <% %>
+<p>Welcome ${name}</p> 
+
 Your Todos 
 <ol>
   <c:forEach items="${todos}" var="todo">
-  <li> ${todo.name} </li>
+  <li> ${todo.name} &nbsp &nbsp <a href="\delete-todo.do?todo=${todo.name}">delete</a></li>
   </c:forEach>
 </ol>
+<form action="/todo.do" method="POST">
+ <input type="text" name="todoNew">
+ <input type="submit" value="add">
+</form>
 <p>${todos}</p>
 </body>
 </html>

@@ -64,6 +64,7 @@ public class LoginServlet extends HttpServlet {
 		boolean isUserValid=UserValidationService.isValidUser(name, password);
 		if(isUserValid)
 		{
+			request.getSession().setAttribute("name", name);
 			response.sendRedirect("/todo.do");
 //			request.setAttribute("name", name);
 //			request.setAttribute("todos", todoService.retriveTodos());

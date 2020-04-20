@@ -3,6 +3,8 @@ package webapp;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.sun.tools.javac.comp.Todo;
+
 public class TodoService {
     private static List<Todolist> todos= new ArrayList<Todolist>();
     static {
@@ -13,5 +15,11 @@ public class TodoService {
     public List<Todolist> retriveTodos() {
 		return todos;
 		
+	}
+   public void addTodo(Todolist todo) {
+		todos.add(todo);
+	}
+   public void deleteodo(Todolist todo) {
+		todos.remove(todo);
 	}
 }
