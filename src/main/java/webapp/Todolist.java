@@ -2,9 +2,19 @@ package webapp;
 
 public class Todolist {
   private String name;
-  public Todolist(String name) {
+  private int id;
+  public int getId() {
+	return id;
+}
+
+public void setId(int id) {
+	this.id = id;
+}
+
+public Todolist(String name,int id) {
 	  super();
 	  this.name = name;
+	  this.id=id;
   }
 
 public String getName() {

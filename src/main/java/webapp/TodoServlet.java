@@ -3,6 +3,7 @@ package webapp;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -47,14 +48,7 @@ public class TodoServlet extends HttpServlet {
 		request.getSession().setAttribute("todos", todoService.retriveTodos());
 		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
 //		PrintWriter out = response.getWriter();
-//		out.println("<html>");
-//		out.println("<head>");
-//		out.println("<title>Yahoo!!!!!!!!</title>");
-//		out.println("</head>");
-//		out.println("<body>");
-//		out.println("My First Servlet");
-//		out.println("</body>");
-//		out.println("</html>");
+
 
 	
 
@@ -62,7 +56,9 @@ public class TodoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 //      request.setAttribute("todos", todoService.retriveTodos());
 		String newTodo = request.getParameter("todoNew");
-		todoService.addTodo(new Todolist(newTodo));
+		List<Todolist> todos2=todoService.retriveTodos();
+		Todolist lastElem = todos2.get(todos2.size() - 1);
+		todoService.addTodo(new Todolist(newTodo,lastElem.getId()+1));
 		response.sendRedirect("/todo.do");
 
   }

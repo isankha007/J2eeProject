@@ -16,7 +16,7 @@
 Your Todos 
 <ol>
   <c:forEach items="${todos}" var="todo">
-  <li> ${todo.name} &nbsp &nbsp <a href="\delete-todo.do?todo=${todo.name}">delete</a></li>
+  <li> ${todo.name} &nbsp &nbsp <a href="\delete-todo.do?todo=${todo.name}&todoid=${todo.id}">delete</a></li>
   </c:forEach>
 </ol>
 <form action="/todo.do" method="POST">

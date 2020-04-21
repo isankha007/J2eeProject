@@ -3,14 +3,12 @@ package webapp;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.sun.tools.javac.comp.Todo;
-
 public class TodoService {
     private static List<Todolist> todos= new ArrayList<Todolist>();
     static {
-    	todos.add(new Todolist("learn web app"));
-    	todos.add(new Todolist("learn spring app"));
-    	todos.add(new Todolist("learn spring rest"));
+    	todos.add(new Todolist("learn web app",1));
+    	todos.add(new Todolist("learn spring app",2));
+    	todos.add(new Todolist("learn spring rest",3));
     }
     public List<Todolist> retriveTodos() {
 		return todos;
