@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>WWWW!!!!!!!! from JSP</title>
 </head>
-
+<!-- Discarded --> 
 <body>
 <%-- My JSP page ${name} and password is ${password} --%> 
 <% %>
