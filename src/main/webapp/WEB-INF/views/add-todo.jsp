@@ -38,7 +38,7 @@
 		<ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="/list-todo.do">Todos</a></li>
-			<li><a href="http://www.in28minutes.com">In28Minutes</a></li>
+			<li><a href="http://sankhablogs.herokuapp.com/">Blogs</a></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
@@ -50,8 +50,16 @@
 	<div class="container">
 	Your next action Item
 		<form action="/add-todo.do" method="POST">
-			<input type="text" name="todoNew"> <input type="submit"
-				value="add">
+		<fieldset class="form-group">
+		  <label>Description</label>
+		   <input type="text" name="todoNew" class="form-control"><br>
+		  </fieldset>
+		  <fieldset>
+				<label>Category  </label> 
+				<input type="text" name="category" class="form-control"> <br>
+		  </fieldset>
+		  <input type="submit" name="add"
+				value="Add" class="btn btn-success">
 		</form>
 	</div>
 

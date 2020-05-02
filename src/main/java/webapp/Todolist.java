@@ -2,6 +2,7 @@ package webapp;
 
 public class Todolist {
   private String name;
+  private String categoryStr;
   private int id;
   public int getId() {
 	return id;
@@ -11,10 +12,11 @@ public void setId(int id) {
 	this.id = id;
 }
 
-public Todolist(String name,int id) {
+public Todolist(String name,int id,String categoryStr) {
 	  super();
 	  this.name = name;
 	  this.id=id;
+	  this.categoryStr=categoryStr;
   }
 
 public String getName() {
@@ -54,6 +56,16 @@ public boolean equals(Object obj) {
 		return false;
 	return true;
 }
+
+public String getCategoryStr() {
+	return categoryStr;
+}
+
+public void setCategoryStr(String categoryStr) {
+	this.categoryStr = categoryStr;
+}
+
+
  
   
 }

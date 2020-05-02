@@ -46,7 +46,7 @@ public class DeleteTodoeServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {		
 		System.out.println(request.getParameter("todo")+" "+request.getParameter("todoid"));
-		todoService.deleteodo(new Todolist(request.getParameter("todo"), Integer.parseInt(request.getParameter("todoid"))));
+		todoService.deleteodo(new Todolist(request.getParameter("todo"), Integer.parseInt(request.getParameter("todoid")),request.getParameter("todo")));
         response.sendRedirect("/list-todos.do");
 
 }
