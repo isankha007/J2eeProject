@@ -49,9 +49,18 @@ public class AddTodoServlet extends HttpServlet {
 		List<Todolist> todos2=todoService.retriveTodos();
 		Todolist lastElem = todos2.get(todos2.size() - 1);
 		todoService.addTodo(new Todolist(newTodo,lastElem.getId()+1));
-		response.sendRedirect("/todo.do");
+		response.sendRedirect("/list-todos.do");
 
   }
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+        String name=request.getParameter("name");
+        String password=request.getParameter("password");
+        request.setAttribute("name", name);
+        request.setAttribute("password", password);
+		request.getRequestDispatcher("/WEB-INF/views/add-todo.jsp").forward(request, response);
+
+	}
 	
 	
 

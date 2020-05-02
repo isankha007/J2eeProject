@@ -37,7 +37,7 @@ import webapp.TodoService;
 //3. doGet(HttpServletRequest request, HttpServletResponse response)
 //4. How is the response created?
 
-@WebServlet(urlPatterns = "/list-todo.do")
+@WebServlet(urlPatterns = "/list-todos.do")
 public class ListTodoServlet extends HttpServlet {
 	public TodoService todoService= new TodoService();
 
@@ -46,7 +46,7 @@ public class ListTodoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 //      request.setAttribute("todos", todoService.retriveTodos());
 		request.getSession().setAttribute("todos", todoService.retriveTodos());
-		request.getRequestDispatcher("/WEB-INF/views/todo.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/views/list-todos.jsp").forward(request, response);
 //		PrintWriter out = response.getWriter();
 
 

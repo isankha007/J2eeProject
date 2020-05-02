@@ -65,7 +65,7 @@ public class LoginServlet extends HttpServlet {
 		if(isUserValid)
 		{
 			request.getSession().setAttribute("name", name);
-			response.sendRedirect("/list-todo.do");
+			response.sendRedirect("/list-todos.do");
 //			request.setAttribute("name", name);
 //			request.setAttribute("todos", todoService.retriveTodos());
 ////			request.setAttribute("password", password);
